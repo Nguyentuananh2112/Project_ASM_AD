@@ -6,7 +6,7 @@ Cách Clone project về máy:
 4: Sau khi hoàn tất hãy chạy nó lên và bắt đầu làm các bước tiếp theo
 
 ----------------------------------------
-1: Sau khi mở đc project lên Android Studio thì hãy nhấn vào mục Terminal ở góc bên dưới tay trái hoặc nhấn Alt + F12 
+1: Sau khi mở đc project lên Android Studio thì hãy nhấn vào mục Terminal ở góc bên dưới tay trái hoặc nhấn Alt + F12
 2: ![image](https://github.com/user-attachments/assets/8102877a-af6c-46cd-9929-a1f37ac2424f) 
 + Nhìn vào ảnh có mũi tên chỉ xuống hãy nhấn vào đó và nhấn vào GitBash
 + Nếu nó có hiện nhánh (main) thì hãy chuyển sang nhánh (version-dev) "NGHIÊM CẤM CODE TRÊN NHÁNH CÓ TÊN LÀ:(main), VÌ SẼ KHÓ SỬA CHO SAU NÀY, NẾU K BIẾT HÃY HỎI TUẤN ANH NHÉ"
