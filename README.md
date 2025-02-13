@@ -10,7 +10,10 @@ Cách Clone project về máy:
 ----
 2: ![image](https://github.com/user-attachments/assets/8102877a-af6c-46cd-9929-a1f37ac2424f) 
 + Nhìn vào ảnh có mũi tên chỉ xuống hãy nhấn vào đó và nhấn vào GitBash
-+ Nếu nó có hiện nhánh (main) thì hãy chuyển sang nhánh (version-dev) "NGHIÊM CẤM CODE TRÊN NHÁNH CÓ TÊN LÀ:(main), VÌ SẼ KHÓ SỬA CHO SAU NÀY, NẾU K BIẾT HÃY HỎI TUẤN ANH NHÉ"
+
+  "NGHIÊM CẤM CODE TRÊN NHÁNH CÓ TÊN LÀ:(main), VÌ SẼ KHÓ SỬA CHO SAU NÀY, NẾU K BIẾT HÃY HỎI TUẤN ANH NHÉ"
+  --
++ Nếu nó có hiện nhánh (main) thì hãy chuyển sang nhánh (version-dev) 
 + CÁC BƯỚC ĐỔI NHANH NHƯ SAU:
   - git switch version-dev và nhấn Enter để chạy
 
