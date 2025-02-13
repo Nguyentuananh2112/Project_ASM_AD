@@ -1,8 +1,11 @@
 # Project_ASM_AD
 Cách Clone project về máy:
 1: Nhấn vào Code và copy đường link này --> https://github.com/Nguyentuananh2112/Project_ASM_AD.git
+
 2: Tạo 1 Folder trong máy tính và mở gitbash hay powershell trên chính folder đó
+
 3: Dán link git đã copy vào và Enter
+
 4: Sau khi hoàn tất hãy chạy nó lên và bắt đầu làm các bước tiếp theo
 
 ----------------------------------------
