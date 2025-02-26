@@ -27,3 +27,10 @@ Cách Clone project về máy:
   - git status (Check lại 1 lần nữa xem các file đã chuyển sang màu xanh hay chưa)
   - git commit -m "ghi vào đây là đã code được tính năng gì"
   - git push (Để hoàn tất đẩy code lên nhánh (version-dev)
+
+------------------
+Cách để pull code từ git về:
+1: mở terminal trong android studio và chuyển sang git bash
+2: nếu nó hiện ở nhánh version-dev rồi thì không phải chuyển nhánh nữa. Nếu nó ở nhánh master hoặc main thì xem ở trên để đổi nhánh sang nhánh version-dev
+3: git fetch origin
+4: git pull origin version-dev
