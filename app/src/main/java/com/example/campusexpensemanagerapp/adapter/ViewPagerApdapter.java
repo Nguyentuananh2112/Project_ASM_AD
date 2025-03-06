@@ -1,12 +1,10 @@
 package com.example.campusexpensemanagerapp.adapter;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.lifecycle.Lifecycle;
 import androidx.viewpager2.adapter.FragmentStateAdapter;
-
 import com.example.campusexpensemanagerapp.BudgetFragment;
 import com.example.campusexpensemanagerapp.ExpensesFragment;
 import com.example.campusexpensemanagerapp.HomeFragment;

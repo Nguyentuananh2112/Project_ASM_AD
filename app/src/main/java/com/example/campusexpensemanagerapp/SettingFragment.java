@@ -1,5 +1,6 @@
 package com.example.campusexpensemanagerapp;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -7,6 +8,7 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -59,6 +61,16 @@ public class SettingFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_setting, container, false);
+        // mục đichs là để: khi nhấn vào setting page thì nnó sẽ hiện tên của Username.
+        View view = inflater.inflate(R.layout.fragment_setting, container, false);
+        TextView tvTitle = view.findViewById(R.id.tvTitle);
+        Intent intent = getActivity().getIntent();
+        Bundle bundle = intent.getExtras();
+        if (bundle != null){
+            String username = bundle.getString("USERNAME_ACCOUNT", "");
+            tvTitle.setText("Hello: " + username);
+        }
+
+        return view;
     }
 }
