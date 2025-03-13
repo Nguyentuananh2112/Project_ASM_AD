@@ -128,7 +128,7 @@ public class DashboardActivity
             viewPager2.setCurrentItem(1);
         } else if (item.getItemId() == R.id.budget) {
             viewPager2.setCurrentItem(2);
-        } else if (item.getItemId() == R.id.action_settings) {
+        } else if (item.getItemId() == R.id.menu_setting) {
             viewPager2.setCurrentItem(3);
         }else {
             viewPager2.setCurrentItem(0);
