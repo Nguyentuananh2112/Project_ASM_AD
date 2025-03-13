@@ -12,8 +12,11 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.CampusExpenseManagerApp"
         tools:targetApi="31">
+        <activity android:name=".DashboardActivity"/>
+        <activity android:name=".SignUpActivity"/>
+        <activity android:name=".ForgetPasswordActivity"/>
         <activity
-            android:name=".HelloWorld"
+            android:name=".SignInActivity"
             android:exported="true"
             android:theme="@style/Theme.CampusExpenseManagerApp">
             <intent-filter>
