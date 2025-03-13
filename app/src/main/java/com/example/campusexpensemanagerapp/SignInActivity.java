@@ -12,22 +12,38 @@ import android.widget.Toast;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.campusexpensemanagerapp.db.UserDb;
+import com.example.campusexpensemanagerapp.model.UserModel;
+
 import java.io.FileInputStream;
 
 public class SignInActivity extends AppCompatActivity {
     EditText editUserName, editPassword;
     TextView tvSignUp;
     Button btnLogin;
+    UserDb userDb;
+    TextView tvForgetPassword;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_in);
 
+        userDb = new UserDb(SignInActivity.this);
+        tvForgetPassword = findViewById(R.id.tvForgetpassword);
         tvSignUp = findViewById(R.id.tvSignUpAccount);
         editUserName = findViewById(R.id.emailEditText);
         editPassword = findViewById(R.id.passwordEditText);
         btnLogin = findViewById(R.id.signInButton);
+
+
+        tvForgetPassword.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intentForgetPass = new Intent(SignInActivity.this, ForgetPasswordActivity.class);
+                startActivity(intentForgetPass);
+            }
+        });
 
         // Di chuyển đến trang signup
         tvSignUp.setOnClickListener(new View.OnClickListener() {
@@ -37,10 +53,49 @@ public class SignInActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-        loginWithDataInternalFile();
+        loginWithDatabase();
 
     }
 
+
+    private void loginWithDatabase(){
+        btnLogin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String user = editUserName.getText().toString().trim();
+                String password = editPassword.getText().toString().trim();
+                if (TextUtils.isEmpty(user)){
+                    editUserName.setError("Username not empty");
+                    return;
+                }
+                if (TextUtils.isEmpty(password)){
+                    editPassword.setError("Password not empty");
+                    return;
+                }
+                UserModel userData = userDb.getInfoUser(user, password, 0);
+                assert userData != null;
+                if (userData.getUsername() != null){
+                    //login success
+                    Intent intent = new Intent(SignInActivity.this, DashboardActivity.class);
+                    Bundle bundle = new Bundle();
+                    bundle.putInt("USER_ID", userData.getId());
+                    bundle.putString("USERNAME_ACCOUNT", userData.getUsername());
+                    bundle.putString("USER_EMAIL", userData.getEmail());
+                    bundle.putString("USER_PHONE", userData.getPhone());
+                    intent.putExtras(bundle);
+                    startActivity(intent);
+                    finish();
+                }else {
+                    // login fail
+                    Toast.makeText(SignInActivity.this, "Account Invalid", Toast.LENGTH_SHORT).show();
+
+                }
+            }
+        });
+    }
+
+
+    // login local storage
     private void loginWithDataInternalFile(){
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
